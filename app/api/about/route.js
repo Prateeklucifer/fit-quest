@@ -12,25 +12,15 @@ export async function GET() {
     if (allEntries.length == 0) {
       await About.create({
         para1:
-          "At Dance Lab, we’re passionate about providing a place where dance becomes an expression of joy, creativity, and discipline. Our experienced instructors guide students through various dance styles, helping them improve their skills and confidence. Whether you're new to dance or looking to hone your skills, we offer classes for every level, ensuring everyone can find their rhythm.",
+          "Fit Quest is a modern gym that offers a dynamic and inclusive environment for individuals to reach their fitness goals. Our state-of-the-art facility is designed to support a wide range of fitness levels, from beginners to seasoned athletes. We pride ourselves on creating a supportive community where each member is encouraged to push their limits and achieve their personal best. Whether you're focused on building strength, improving cardiovascular health, or enhancing flexibility, Fit Quest is the perfect place to start your fitness journey.",
         para2:
-          "Welcome to Dance Lab, where movement meets passion. We offer a wide range of dance classes, taught by skilled instructors who are dedicated to helping you unlock your full potential. From ballet to hip-hop, our academy is a place where dancers of all ages and skill levels can thrive in a supportive, vibrant community.",
+          "At Fit Quest, we believe in a holistic approach to fitness. Our team of expert trainers, nutritionists, and wellness coaches work together to ensure that our members not only get stronger physically but also feel more confident and empowered mentally. Our goal is to foster a community where members feel supported, motivated, and inspired to reach new heights in their fitness journey. Join us and experience the difference that comes with personalized training and a genuine commitment to your success.",
         para3:
-          "Dance Lab is a dynamic dance academy dedicated to offering quality dance education. Our passionate and skilled instructors work with students to help them improve technique, express creativity, and build confidence. Whether you’re starting out or looking to advance your skills, Dance Lab provides a welcoming environment for all dancers.",
+          "Fit Quest is more than just a gym; it's a community where individuals come together to improve their physical and mental well-being. Our facility is equipped with the latest fitness tools and technology, providing a holistic approach to health.",
         para4:
-          "At Dance Lab, we believe in the power of dance to bring people together, build self-confidence, and foster creativity. We provide professional dance training in various styles for all ages and skill levels. Join us and be a part of a growing community where every step you take is a step toward growth.",
+          "Our vision is to be a leading fitness community that fosters growth, strength, and wellness. We aspire to redefine what it means to be fit by offering a diverse range of services that cater to each person’s unique goals. ",
         para5:
-          "At Dance Lab, we offer more than just dance classes – we offer an experience. Whether you are here to learn the basics or challenge your skills, our expert instructors guide you every step of the way. Our academy is a space for dancers to grow, express, and share the joy of movement.",
-        para6:
-          "Our mission is to inspire individuals through the art of dance, helping them build confidence, creativity, and physical fitness. At Dance Lab, we are committed to providing high-quality dance education in a positive, inclusive, and motivating environment, empowering dancers of all ages to pursue their passion and unlock their potential.",
-        para7:
-          "At Dance Lab, our mission is to cultivate a love for dance and provide the highest level of training for students of all backgrounds and experience levels. We strive to create a supportive environment where students can develop their skills, gain confidence, and express themselves freely through movement.",
-        para8:
-          "Our vision is to be a leading dance academy where students are encouraged to pursue their passion for dance, explore new styles, and achieve their goals. We aim to create an inclusive, welcoming space where every dancer feels valued, inspired, and empowered to reach their full potential.",
-        para9:
-          "To be a beacon of creativity and excellence in the dance community, Dance Lab envisions a future where all dancers feel supported, challenged, and motivated to become the best versions of themselves. We aim to be recognized for fostering talent, nurturing self-expression, and promoting the joy of dance.",
-        para10:
-          "Our aim is to provide exceptional dance training in a variety of styles while maintaining a focus on technique, artistry, and personal growth. Through our programs, we aim to instill discipline, confidence, and a love for movement in every dancer, helping them to excel in both their dance journey and personal life.",
+          "At Fit Quest, our aim is to provide a dynamic, inclusive space where everyone feels welcome to start or continue their fitness journey. We strive to offer the highest quality training, resources, and support, helping our members set and achieve realistic goals.",
       });
 
       let allData = await FAQs.find({});

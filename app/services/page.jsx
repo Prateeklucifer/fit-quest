@@ -1,48 +1,20 @@
-"use client"
+import React from 'react'
+import Classes from '../components/Services'
 
-import React, { useEffect, useState } from "react";
-
-export default function Services() {
-  const [services, setServices] = useState(undefined);
-
-  const getServices = async () => {
-    let res = await fetch("http://localhost:3000/api/services");
-    let data = await res.json();
-    setServices(data.data);
-  };
-
-  useEffect(() => {
-    getServices();
-  }, []);
-
-  return (
-    <main>
-      <section className="px-4 container m-auto">
-        <h3 className="font-bold text-xl lg:text-2xl text-center my-5 md:my-11 font-Montserrat">
-          Our Services
-        </h3>
-
-
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-9 gap-x-5 gap-y-20 xl:grid-cols-3 my-6">
-          {services?.map((item, index) => (
-            <div className="" key={index}>
-              <img
-                src={item.imageUrl}
-                alt={item.imageUrl}
-                className="w-full h-[256px] lg:h-[412px] object-cover rounded-[4px]"
-              />
-              <div className="mt-4">
-                <h4 className="text-xl font-bold text-center font-Montserrat">
-                  {item.title}
-                </h4>
-                <p className="text-center mt-2 text-secondary">
-                  {item.description}
-                </p>
-              </div>
+export default function page() {
+    return (
+        <>
+            <div className="about-heading min-h-[30vh] bg-neutral-800 text-white px-4 flex flex-col justify-center items-center relative py-12 mb-8">
+                <div className="box absolute top-0 left-0 w-full h-full z-10 opacity-20">
+                </div>
+                <div className="heading font-bold text-2xl text-center md:text-3xl z-20">
+                    Our Services
+                </div>
+                <div className="para text-center mt-3 md:text-lg z-20">
+                    At Fit Quest, we offer a wide range of services designed to help you achieve your fitness goals.
+                </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+            <Classes />
+        </>
+    )
 }

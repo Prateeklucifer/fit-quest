@@ -4,18 +4,17 @@ import { NextResponse } from "next/server";
 import validator from "validator";
 
 export async function POST(req, res) {
-  const { name, email, subject, msg } =
-    await req.json();
-
+  const { firstName, lastName, email, phone, message } = await req.json();
   try {
     ConnectToDB();
 
-    if (validator.isEmail(email)) {
+    if (validator.isEmail(email) && phone.length == 10) {
       await Contact.create({
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
-        subject: subject,
-        msg: msg,
+        phone: phone,
+        message: message,
       });
       return NextResponse.json({ status: 200 });
     } else {
@@ -23,21 +22,6 @@ export async function POST(req, res) {
     }
   } catch (err) {
     console.log(err);
-    return NextResponse.json(
-      { messege: "something went wrong" },
-      { status: 500 }
-    );
-  }
-}
-
-export async function GET() {
-  try {
-    ConnectToDB();
-
-    let data = await Contact.find({});
-    return NextResponse.json({ data });
-  } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { messege: "something went wrong" },
       { status: 500 }

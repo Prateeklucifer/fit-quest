@@ -20,27 +20,7 @@ const userSchema = new Schema(
     para5: {
       type: String,
       required: [true, "paragraph5 is required"],
-    },
-    para6: {
-      type: String,
-      required: [true, "paragraph6 is required"],
-    },
-    para7: {
-      type: String,
-      required: [true, "paragraph7 is required"],
-    },
-    para8: {
-      type: String,
-      required: [true, "paragraph8 is required"],
-    },
-    para9: {
-      type: String,
-      required: [true, "paragraph8 is required"],
-    },
-    para10: {
-      type: String,
-      required: [true, "paragraph8 is required"],
-    },
+    }
   },
   { timestamps: true }
 );

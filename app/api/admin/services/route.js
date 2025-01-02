@@ -54,7 +54,7 @@ export async function POST(req, res) {
           ConnectToDB();
           await Services.create({
             title: "Enter name",
-            description: "Enter Description",
+            description: "12:00 - 15:00 (Mon - Tue)",
             imageUrl: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           });
           return NextResponse.json(
@@ -96,8 +96,8 @@ export async function PUT(req, res) {
           AllRecords.map(async (item) => {
             await Services.findByIdAndUpdate(item._id, {
               title: item.title,
-              timing: item.timing,
-              description: item.description
+              description: item.description,
+              imageUrl: item.imageUrl
             });
           });
 

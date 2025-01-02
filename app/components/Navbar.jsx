@@ -8,20 +8,16 @@ export default function Navbar() {
       href: "/",
     },
     {
-      name: "Classes",
-      href: "/classes",
-    },
-    {
       name: "Services",
       href: "/services",
     },
     {
-      name: "Pricing",
-      href: "/pricing",
-    },
-    {
       name: "About",
       href: "/about",
+    },
+    {
+      name: "Trainer",
+      href: "/trainer",
     },
     {
       name: "Contact",
@@ -30,11 +26,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header>
-      <nav className="m-auto container px-4 py-3 font-Montserrat font-medium">
+    <header className="bg-neutral-800 text-white">
+      <nav className="m-auto container px-4 py-6">
         <div className="wrapper flex justify-between items-center">
           <Link href={"/"} className="logo">
-            <h1 className="text-xl lg:text-2xl font-bold">Dance<span className="text-accent">Lab</span></h1>
+            <h1 className="text-xl lg:text-2xl font-bold">Fit<span className="text-accent">Quest</span></h1>
           </Link>
           <div id="for-mobile" className="md:hidden">
             <svg
@@ -65,9 +61,6 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          <Link href={"/contact"} className="hidden md:block bg-accent text-white py-1 px-3 rounded font-medium">
-            Join Now
-          </Link>
         </div>
       </nav>
     </header>

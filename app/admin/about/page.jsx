@@ -160,36 +160,6 @@ export default function AdminAbout() {
                                         updatePara5(e, index)
                                     }}></textarea>
                                 </label>
-                                <label htmlFor="para6">
-                                    <div className="block py-2">para6</div>
-                                    <textarea name="para4" id="para6" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={item.para6} onChange={(e) => {
-                                        updatePara6(e, index)
-                                    }}></textarea>
-                                </label>
-                                <label htmlFor="para7">
-                                    <div className="block py-2">para7</div>
-                                    <textarea name="para4" id="para7" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={item.para7} onChange={(e) => {
-                                        updatePara7(e, index)
-                                    }}></textarea>
-                                </label>
-                                <label htmlFor="para8">
-                                    <div className="block py-2">para8</div>
-                                    <textarea name="para4" id="para8" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={item.para8} onChange={(e) => {
-                                        updatePara8(e, index)
-                                    }}></textarea>
-                                </label>
-                                <label htmlFor="para9">
-                                    <div className="block py-2">para9</div>
-                                    <textarea name="para4" id="para9" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={item.para9} onChange={(e) => {
-                                        updatePara9(e, index)
-                                    }}></textarea>
-                                </label>
-                                <label htmlFor="para10">
-                                    <div className="block py-2">para10</div>
-                                    <textarea name="para10" id="para10" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={item.para10} onChange={(e) => {
-                                        updatePara10(e, index)
-                                    }}></textarea>
-                                </label>
                             </div>
                         ))}
                     </div>

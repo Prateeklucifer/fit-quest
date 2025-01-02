@@ -1,22 +1,24 @@
 import { Schema, models, model } from "mongoose";
 const userSchema = new Schema(
   {
-    name: {
+    firstName: {
       type: String,
-      required: [true, "name is required"],
+      required: [true, "first name is required"],
+    },
+    lastName: {
+      type: String,
+      required: [true, "last name is required"],
     },
     email: {
-      type: String,
-      required: [true, "email is required"],
+        type: String,
+        required: [true, "email is required"]
     },
-    subject: {
-      type: String,
-      required: [true, "subject is required"],
-    },
-    msg: {
-      type: String,
-      required: [true, "message is required"],
-    },
+    phone:{
+        type: Number
+    }, 
+    message: {
+        type: String,
+    }
   },
   { timestamps: true }
 );

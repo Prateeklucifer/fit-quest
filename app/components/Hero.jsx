@@ -3,25 +3,27 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="relative md:min-h-[70vh] md:h-[80vh]">
-      <div className="absolute w-full h-full top-0 left-0 bg-black/[61%] -z-10"></div>
-      <img
-        src="/hero.jpg"
-        alt="hero.jpg"
-        className="absolute top-0 left-0 w-full h-full -z-20 object-cover"
-      />
-      <div className="container px-4 m-auto py-28 z-30 flex items-start flex-col justify-center h-full md:min-h-[70vh]">
-        <h1 className="text-2xl font-bold font-Montserrat mb-2 lg:mb-4 md:text-3xl lg:text-5xl text-white md:w-1/2 xl:text-5xl ">
-          Step into the world of dance and
-          <span className="bg-accent text-white px-2 py-1 rounded leading-relaxed ml-2">Feel the magic.</span>
+    <section className="px-4 py-9 sm:py-12 lg:py-20 container m-auto lg:flex items-center">
+      <div className="lg:w-1/2 lg:px-6 xl:px-14">
+        <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl">
+          Unleash Your Potential at Fit Quest
         </h1>
-        <p className="text-lg mb-10 md:mb-14 text-white md:w-1/2 lg:text-xl">
-          Discover the magic of dance at Dance Lab. Whether you're a beginner or pro, join us and let the rhythm move you!
+        <p className="py-2 lg:py-4 md:text-lg">
+          Join us at Fit Quest, where we empower you to reach your fitness goals. Whether you're looking to build strength, lose weight, or improve your overall health, our state-of-the-art facilities and expert trainers are here to guide you every step of the way. Start your journey towards a healthier, stronger you today!
         </p>
-        <Link href={"/contact"} className="text-lg py-3 bg-accent text-white px-4 rounded font-semibold lg:text-xl">
-          Book Your First Class
+        <Link href="/contact" className="bg-accent text-white px-3 py-2 my-5 md:my-8 rounded-sm font-bold md:text-lg block w-fit">
+          Get Started
         </Link>
       </div>
-    </div>
+      <div
+        className="mt-6 flex justify-center items-center lg:w-1/2 lg:px-4"
+      >
+        <img
+          src="/hero.png"
+          alt=""
+          className="rounded-xl h-72 w-full sm:h-80 lg:h-96 object-cover xl:h-[460px]"
+        />
+      </div>
+    </section>
   );
 }

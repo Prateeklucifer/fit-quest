@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import jsonwebtoken from "jsonwebtoken";
 import { cookies } from "next/headers";
 import ConnectToDB from "@/DB/ConnectToDB";
-import Classes from "@/schema/Classes";
+import Schedule from "@/schema/Schedule";
 
 export async function DELETE(req, res) {
   const { id } = await req.json();
@@ -17,7 +17,7 @@ export async function DELETE(req, res) {
       if (isVailed) {
         try {
           ConnectToDB();
-          await Classes.findByIdAndDelete({ _id: id });
+          await Schedule.findByIdAndDelete({ _id: id });
           return NextResponse.json(
             { message: "Item removed sucessfully" },
             { status: 200 }
@@ -52,11 +52,14 @@ export async function POST(req, res) {
       if (isVailed) {
         try {
           ConnectToDB();
-          await Classes.create({
-            title: "Enter name",
-            timing: "12:00 - 15:00 (Mon - Tue)",
-            imageUrl: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-          });
+          await Schedule.create({
+            time: "Enter Timing",
+            monday: "Enter the value.",
+            tuesday: "Enter the value.",
+            wednesday: "Enter the value. ",
+            thursday: "Enter the value. ",
+            friday: "Enter the value. ",
+          },);
           return NextResponse.json(
             { message: "Item Added sucessfully" },
             { status: 200 }
@@ -94,10 +97,13 @@ export async function PUT(req, res) {
           ConnectToDB();
 
           AllRecords.map(async (item) => {
-            await Classes.findByIdAndUpdate(item._id, {
-              title: item.title,
-              timing: item.timing,
-              imageUrl: item.imageUrl
+            await Schedule.findByIdAndUpdate(item._id, {
+              time: item.time,
+              monday: item.monday,
+              tuesday: item.tuesday,
+              wednesday: item.wednesday,
+              thursday: item.thursday,
+              friday: item.friday
             });
           });
 

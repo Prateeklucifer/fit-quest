@@ -1,30 +1,25 @@
 "use client"
 
-import { useState } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import { useState } from "react"
+import { Bounce, ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Contact() {
-
-    const [name, setName] = useState("");;
-    const [subject, setSubject] = useState("");
-    const [email, setEmail] = useState("");
-    const [msg, setMsg] = useState("");
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [phone, setPhone] = useState("")
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
 
     const submitRequest = async () => {
         let data = await fetch(`http://localhost:3000/api/contact`, {
             method: "POST",
-            body: JSON.stringify({
-                name,
-                email,
-                subject,
-                msg,
-            }),
-        });
-        let res = await data.json();
+            body: JSON.stringify({ firstName, lastName, email, phone, message })
+        })
+        let res = await data.json()
 
         if (data.status == 200) {
-            toast.success("details sended", {
+            toast.success('details submited', {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -36,7 +31,7 @@ export default function Contact() {
                 transition: Bounce,
             });
         } else {
-            toast.error("something went wrong", {
+            toast.error('something went wrong', {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -48,9 +43,15 @@ export default function Contact() {
                 transition: Bounce,
             });
         }
-    };
+    }
 
     return (
+        // <div className="md:px-4">
+        //     <div className="container m-auto">
+        //         <div className="name">
+        //         </div>
+        //     </div>
+        // </div>
         <>
             <ToastContainer
                 position="top-center"
@@ -64,99 +65,45 @@ export default function Contact() {
                 pauseOnHover={false}
                 theme="light"
             />
-            <div className="min-h-screen flex flex-col">
-                <main className="flex-grow pt-24">
-                    <div className="container mx-auto px-4">
-                        <h1 className="text-4xl text-center mb-8">Contact Us</h1>
-                        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                            <div className="space-y-8">
-                                <h2 className="text-2xl mb-6 font-semibold">Get in Touch</h2>
-
-                                <div className="space-y-6">
-                                    <div className="flex items-center gap-4">
-
-                                        <div>
-                                            <h3 className="font-semibold">Phone</h3>
-                                            <p className="text-gray-600">+91 8767654512</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center gap-4">
-
-                                        <div>
-                                            <h3 className="font-semibold">Email</h3>
-                                            <p className="text-gray-600">info@dancelab.com</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center gap-4">
-
-                                        <div>
-                                            <h3 className="font-semibold">Location</h3>
-                                            <p className="text-gray-600">House 34 Sector 1 DDU Nagar Raipur, Chhattisgarh</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="p-6">
-                                <h2 className="text-2xl mb-6 font-medium">Send us a Message</h2>
-
-                                <form className="space-y-4">
-                                    <div>
-                                        <input
-                                            placeholder="Your Name"
-                                            value={name}
-                                            onChange={(e) => {
-                                                setName(e.target.value)
-                                            }}
-                                            className="w-full my-2 ring-1 px-2 py-2 ring-neutral-200 rounded focus:outline-accent"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <input
-                                            type="email"
-                                            placeholder="Your Email"
-                                            value={email}
-                                            onChange={(e) => {
-                                                setEmail(e.target.value)
-                                            }}
-                                            className="w-full my-2 ring-1 px-2 py-2 ring-neutral-200 rounded focus:outline-accent"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <input
-                                            placeholder="Subject"
-                                            value={subject}
-                                            onChange={(e) => {
-                                                setSubject(e.target.value)
-                                            }}
-                                            className="w-full my-2 ring-1 px-2 py-2 ring-neutral-200 rounded focus:outline-accent"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <textarea
-                                            placeholder="Your Message"
-                                            value={msg}
-                                            onChange={(e) => {
-                                                setMsg(e.target.value)
-                                            }}
-                                            className="min-h-56 w-full my-2 ring-1 px-2 py-2 ring-neutral-200 rounded focus:outline-accent"
-                                        />
-                                    </div>
-
-                                    <button type="submit" className="w-full bg-accent py-2 rounded text-white font-semibold" onClick={() => {
-                                        submitRequest();
-                                    }}>Send Message</button>
-                                </form>
-                            </div>
+            <div className=" container m-auto flex flex-col lg:px-28 xl:px-72 ">
+                <div className="right px-4 py-2 flex flex-col gap-6 lg:py-8 lg:px-12 xl:px-28">
+                    <div className="name flex flex-col gap-4 md:flex-row">
+                        <div className="firstname md:w-1/2">
+                            <label htmlFor="last" className="block mb-2">First Name <span className="text-red-400">*</span></label>
+                            <input type="text" name="" id="last" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={firstName} onChange={(e) => {
+                                setFirstName(e.target.value)
+                            }} />
+                        </div>
+                        <div className="lastname md:w-1/2">
+                            <label htmlFor="name" className="block mb-2">Last Name <span className="text-red-400">*</span></label>
+                            <input type="text" name="" id="name" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={lastName} onChange={(e) => {
+                                setLastName(e.target.value)
+                            }} />
                         </div>
                     </div>
-                </main>
+
+                    <div className="email">
+                        <label htmlFor="email" className="block mb-2">Email <span className="text-red-400">*</span></label>
+                        <input type="email" name="" id="email" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={email} onChange={(e) => {
+                            setEmail(e.target.value)
+                        }} />
+                    </div>
+                    <div className="phone">
+                        <label htmlFor="phone" className="block mb-2">Phone number</label>
+                        <input type="number" name="" id="phone" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={phone} onChange={(e) => {
+                            setPhone(e.target.value)
+                        }} />
+                    </div>
+                    <div className="messege">
+                        <label htmlFor="msg" className="block mb-2">Message</label>
+                        <textarea name="" id="msg" className="px-2 rounded-sm outline-none ring-1 ring-zinc-400 w-full" value={message} onChange={(e) => {
+                            setMessage(e.target.value)
+                        }} ></textarea>
+                    </div>
+
+                    <button className="text-white px-4 py-2 rounded-md bg-accent hover:bg-accent/90 w-full" onClick={() => { submitRequest() }}>Lets Talk</button>
+                </div>
             </div>
         </>
-    );
-};
+    )
+}

@@ -13,16 +13,16 @@ export default function AdminPannel() {
 
   const links = [
     {
-      name: "Calasses",
-      href: "/admin/classes",
-    },
-    {
       name: "Services",
       href: "/admin/services",
     },
     {
-      name: "Pricing",
-      href: "/admin/pricing",
+      name: "Trainers",
+      href: "/admin/trainers",
+    },
+    {
+      name: "Schedules",
+      href: "/admin/schedules",
     },
     {
       name: "About Us",
@@ -53,7 +53,7 @@ export default function AdminPannel() {
   }
 
   return (
-    <nav className="py-3 md:py-4 px-4">
+    <nav className="md:py-6 px-4 bg-neutral-800 text-white mb-12">
       <div className="container m-auto flex items-center justify-start md:justify-between gap-6">
         <button
           className="forMobi md:hidden"
@@ -67,7 +67,7 @@ export default function AdminPannel() {
           href={"/"}
           className="logo font-semibold text-xl md:text-2xl"
         >
-          Dance<span className="text-accent">Lab</span>
+          Fit<span className="text-accent">Quest</span>
         </Link>
         <div
           onClick={() => {
@@ -113,14 +113,14 @@ export default function AdminPannel() {
             <li key={key}>
               <Link
                 href={link.href}
-                className="text-zinc-600 hover:text-zinc-900"
+                className=""
               >
                 {link.name}
               </Link>
             </li>
           ))}
           <button
-            className="text-white bg-accent ring-1 ring-white/40 hover:bg-accent/90 rounded px-4 py-1 "
+            className="text-white bg-accent hover:bg-accent/90 rounded px-4 py-1 "
             onClick={() => {
               removeToken();
             }}
